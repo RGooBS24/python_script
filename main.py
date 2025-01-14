@@ -46,16 +46,16 @@ if __name__ == "__main__":
     # Update the counter
     coin_flip = random.choice(["heads", "tails"])
     print(f"Coin flip result: {coin_flip}")
-    if coin_flip == "heads":
+    # if coin_flip == "heads":
 
-        update_counter()
+    update_counter()
 
-        # Stage the changes
-        run_git_command("git add counter.py")
+    # Stage the changes
+    run_git_command("git add counter.py")
 
-        # Commit the changes
-        commit_message = "Update counter"
-        run_git_command(f"git commit -m \"{commit_message}\"")
+    # Commit the changes
+    commit_message = "Update counter"
+    run_git_command(f"git commit -m \"{commit_message}\"")
 
-        # Push the changes
-        run_git_command("git push")
+    # Push the changes
+    run_git_command("git push")
