@@ -1,11 +1,13 @@
 import os
 import subprocess
+import random
 
 # Path to the file containing the counter
 file_path = "counter.py"
 
 # Function to update the counter in the file
 def update_counter():
+
     try:
         # Read the file content
         with open(file_path, "r") as file:
@@ -42,14 +44,18 @@ def run_git_command(command):
 # Main script execution
 if __name__ == "__main__":
     # Update the counter
-    update_counter()
+    coin_flip = random.choice(["heads", "tails"])
+    print(f"Coin flip result: {coin_flip}")
+    if coin_flip == "heads":
 
-    # Stage the changes
-    run_git_command("git add counter.py")
+        update_counter()
 
-    # Commit the changes
-    commit_message = "Update counter"
-    run_git_command(f"git commit -m \"{commit_message}\"")
+        # Stage the changes
+        run_git_command("git add counter.py")
 
-    # Push the changes
-    run_git_command("git push")
+        # Commit the changes
+        commit_message = "Update counter"
+        run_git_command(f"git commit -m \"{commit_message}\"")
+
+        # Push the changes
+        run_git_command("git push")
