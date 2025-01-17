@@ -1,6 +1,7 @@
 import os
 import subprocess
 import random
+from datetime import datetime
 
 # Path to the file containing the counter
 file_path = "counter.py"
@@ -40,18 +41,18 @@ def run_git_command(command):
         print(f"Error running command '{command}': {result.stderr}")
     else:
         print(f"Command '{command}' ran successfully.")
-
 # Main script execution
 if __name__ == "__main__":
     # Update the counter
     coin_flip = random.choice(["heads", "tails"])
-    print(f"Coin flip result: {coin_flip}")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"\n[{timestamp}]Coin flip result: {coin_flip}")
     if coin_flip == "heads":
 
         update_counter()
 
         # Stage the changes
-        run_git_command("git add counter.py")
+        run_git_command("git add .")
 
         # Commit the changes
         commit_message = "Update counter"
