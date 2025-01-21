@@ -44,7 +44,7 @@ def run_git_command(command):
 # Main script execution
 if __name__ == "__main__":
     # Update the counter
-    coin_flip = random.choice(["heads", "tails", "heads"])
+    coin_flip = random.choice(["heads", "heads", "heads", "tails"])
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n[{timestamp}]Coin flip result: {coin_flip}")
     if coin_flip == "heads":
