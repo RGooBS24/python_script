@@ -1,1 +1,1 @@
-counter = 255
+counter = 256
